@@ -19,7 +19,8 @@ export default function Letter({ onFind }) {
       if (dead) return
       if (i >= texts.length) { setCaret(-1); return }
       const ii = i
-      j++; setCaret(ii); setShown((prev) => { const n = prev.slice(); n[ii] = texts[ii].slice(0, j); return n })
+      j++; const upto = j; setCaret(ii)
+      setShown((prev) => { const n = prev.slice(); n[ii] = texts[ii].slice(0, upto); return n })
       if (j >= texts[ii].length) { i++; j = 0; setCaret(-1); timer = setTimeout(go, 380) }
       else timer = setTimeout(go, ii === texts.length - 1 ? 60 : 26)
     }
