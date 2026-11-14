@@ -240,3 +240,6 @@ footer{text-align:center;padding:36px 16px calc(50px + env(safe-area-inset-botto
 
 @media(max-width:560px){.lbl{display:none}.player button{padding:6px 9px}}
 .celebrate .buddy{animation:hop .6s ease-in-out infinite}
+
+/* page cannot scroll while the envelope is shut */
+html.locked,html.locked body{overflow:hidden}
